@@ -25,8 +25,9 @@ public class Aeronave {
     public int getAssentos() {
         return assentos;
     }
+
     @Override
-    public String toString(){
-        return String.format("%3s %-15s %3d",codigo, descricao, assentos);
+    public String toString() {
+        return String.format("%3s %-15s %3d", codigo, descricao, assentos);
     }
 }
