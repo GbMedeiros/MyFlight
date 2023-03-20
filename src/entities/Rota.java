@@ -19,5 +19,8 @@ public class Rota {
     public String toString(){
         return String.format("| %s | %s | %s | %s",cia.getCodigo(),origem.getCodigo(), destino.getCodigo(), aeronave.getCodigo());
     }
+    public String getRota(){
+        return String.format("%s: %s-%S",cia.getCodigo(),origem.getCodigo(),destino.getCodigo());
+    }
 
 }
