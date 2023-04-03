@@ -43,6 +43,7 @@ public class App {
         Rota r2 = new Rota(g3, poa, gru, a733);
         Rota r3 = new Rota(tp, mia, lis, a764);
         Rota r4 = new Rota(jj, gru, mia, a370);
+        Rota r5 = new Rota(g3, gru, mia, a370);
         System.out.println(r1.toString());
         System.out.println(r2.toString());
         System.out.println(r3.toString());
@@ -57,5 +58,51 @@ public class App {
         System.out.println(v2.toString());
         System.out.println(v3.toString());
         System.out.println();
+
+        GerenciadorCias gCias = GerenciadorCias.getInstance();
+        gCias.inserir(jj);
+        gCias.inserir(g3);
+        gCias.inserir(tp);
+        gCias.inserir(ad);
+        System.out.println(gCias.toString());
+
+
+        GerenciadorAeronaves gAeronaves = GerenciadorAeronaves.getInstance();
+        gAeronaves.inserir(a73g);
+        gAeronaves.inserir(a370);
+        gAeronaves.inserir(a733);
+        gAeronaves.inserir(a764);
+        System.out.println(gAeronaves.toString());
+
+
+        GerenciadorAeroportos gAeroporto = GerenciadorAeroportos.getInstance();
+        gAeroporto.inserir(poa);
+        gAeroporto.inserir(gru);
+        gAeroporto.inserir(mia);
+        gAeroporto.inserir(lis);
+        System.out.println(gAeroporto.toString());
+
+
+        GerenciadorRotas gRotas = GerenciadorRotas.getInstance();
+        gRotas.inserir(r1);
+        gRotas.inserir(r2);
+        gRotas.inserir(r3);
+        gRotas.inserir(r4);
+        gRotas.inserir(r5);
+        System.out.println(gRotas.toString());
+        System.out.println("\nbuscar: por origem Aeroporto Salgado Filho\nQual a rota");
+        System.out.println(gRotas.buscarOrigem("São Paulo Guarulhos Intl Apt"));
+        System.out.println("\nbuscar: por destino MIA Miami International Apt\nQual a rota");
+        System.out.println(gRotas.buscarDestino("MIA Miami International Apt"));
+
+
+        GerenciadorVoos gVoos = GerenciadorVoos.getInstance();
+        gVoos.inserir(v1);
+        gVoos.inserir(v2);
+        gVoos.inserir(v3);
+        System.out.println("Buscar por data yyyy-mm-dd");
+        System.out.println(gVoos.buscar(2016,8,10));
+
+
     }
 }

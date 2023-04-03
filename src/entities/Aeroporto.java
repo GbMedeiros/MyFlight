@@ -29,9 +29,21 @@ public class Aeroporto {
         return geo;
     }
 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setGeo(Geo geo) {
+        this.geo = geo;
+    }
+
     @Override
     public String toString() {
-        return String.format("|%3s| %-15s %6.4f | %6.4f", codigo, nome, geo.getLatitude(), geo.getLongitude());
+        return String.format("|%3s| %-30s %6.4f | %6.4f", codigo, nome, geo.getLatitude(), geo.getLongitude());
     }
 
 }

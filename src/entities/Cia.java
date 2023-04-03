@@ -20,6 +20,14 @@ public class Cia {
         return nome;
     }
 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     @Override
     public String toString() {
         return String.format("|%2s| %s", codigo, nome);

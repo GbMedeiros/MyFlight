@@ -26,6 +26,18 @@ public class Aeronave {
         return assentos;
     }
 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setAssentos(int assentos) {
+        this.assentos = assentos;
+    }
+
     @Override
     public String toString() {
         return String.format("%3s %-15s %3d", codigo, descricao, assentos);

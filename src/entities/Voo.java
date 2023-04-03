@@ -16,7 +16,7 @@ public class Voo {
     private String status;
 
     public Voo(int ano, int mes, int dia, int hora, int min, int h, int m, Rota rt, String sts) {
-        data = LocalDate.of(ano,mes,dia);
+        data = LocalDate.of(ano, mes, dia);
         this.hora = LocalTime.of(hora, min);
         duracao = LocalTime.of(h, m);
         rota = rt;
@@ -43,11 +43,29 @@ public class Voo {
         return status;
     }
 
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public void setDuracao(LocalTime duracao) {
+        this.duracao = duracao;
+    }
+
+    public void setRota(Rota rota) {
+        this.rota = rota;
+    }
+
     public void setStatus(String sts) {
         status = sts;
     }
+
     @Override
-    public String toString(){
-        return String.format("%tF | %s | %s | %s | %s", data, hora, duracao, rota.getRota(),status);
+    public String toString() {
+        return String.format("%tF | %s | %s | %s | %s", data, hora, duracao, rota.getRota(), status);
     }
 }

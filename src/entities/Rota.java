@@ -15,6 +15,39 @@ public class Rota {
         this.destino = destino;
         this.aeronave = aeronave;
     }
+
+    public Cia getCia() {
+        return cia;
+    }
+
+    public void setCia(Cia cia) {
+        this.cia = cia;
+    }
+
+    public Aeroporto getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(Aeroporto origem) {
+        this.origem = origem;
+    }
+
+    public Aeroporto getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Aeroporto destino) {
+        this.destino = destino;
+    }
+
+    public Aeronave getAeronave() {
+        return aeronave;
+    }
+
+    public void setAeronave(Aeronave aeronave) {
+        this.aeronave = aeronave;
+    }
+
     @Override
     public String toString(){
         return String.format("| %s | %s | %s | %s",cia.getCodigo(),origem.getCodigo(), destino.getCodigo(), aeronave.getCodigo());
