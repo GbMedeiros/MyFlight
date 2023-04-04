@@ -111,10 +111,11 @@ public class App {
         System.out.println(gVoos.toString());
         System.out.printf("\n      Buscar por data yyyy-mm-dd %s%n", gVoos.buscar(2016, 8, 10));
 
-        //Geo geo1 = new Geo(poa.getGeo().getLatitude(), poa.getGeo().getLongitude());
         System.out.println("Distancia entre Poa - Slagado Filho e SP - Guarulhos");
-        System.out.println(Geo.distancia(poa.getGeo(), gru.getGeo()));
-        System.out.println(Geo.distancia(v2));
+        System.out.printf("Usando dois objetos geo: %5.2fkm %n",Geo.distancia(poa.getGeo(), gru.getGeo()));
+        System.out.printf("Usando voo: %5.2fkm%n",Geo.distancia(v2));
+        System.out.printf("Total de Companhias aereas: %d%n",Cia.getTotalCias());
+
 
     }
 }
