@@ -40,9 +40,6 @@ public class GerenciadorRotas {
         return String.format("%s", sb);
     }
 
-    public void buscarDestino() {
-
-    }
 
     public void inserir(Rota rota) {
         rotas.add(rota);
@@ -50,7 +47,7 @@ public class GerenciadorRotas {
 
     @Override
     public String toString() {
-        StringBuilder rt = new StringBuilder("\n            Gerenciador Rotas");
+        StringBuilder rt = new StringBuilder("\n\n            Gerenciador Rotas");
         for (Rota r : rotas) {
             rt.append("\n");
             rt.append(r.toString());

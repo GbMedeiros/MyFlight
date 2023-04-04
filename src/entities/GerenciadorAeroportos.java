@@ -19,12 +19,8 @@ public class GerenciadorAeroportos {
     }
 
 
-    public Aeroporto buscar(Aeroporto aero) {
-        for (Aeroporto a : aeroportos) {
-            if (a.getCodigo() == aero.getCodigo()) {
-                return aero;
-            }
-        }
+    public Aeroporto buscar(String cod) {
+        for (Aeroporto a : aeroportos) if (a.getCodigo().equalsIgnoreCase(cod)) return a;
         return null;
     }
 
@@ -34,7 +30,7 @@ public class GerenciadorAeroportos {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("\n            Gerenciador de Aeropostos");
+        StringBuilder sb = new StringBuilder("\n\n            Gerenciador de Aeropostos");
         for (Aeroporto a : aeroportos) {
             sb.append("\n");
             sb.append(a.toString());

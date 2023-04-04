@@ -22,25 +22,19 @@ public class GerenciadorCias {
         cias.add(cia);
     }
 
-    public Cia buscarCod(Cia cia) {
-        for (Cia c : cias) {
-            if (c.getCodigo() == c.getCodigo()) {
-                return cia;
-            }
-        }
+    public Cia buscarCod(String cod) {
+        for (Cia c : cias) if (c.getCodigo().equalsIgnoreCase(cod)) return c;
         return null;
     }
 
-    public Cia buscarNome(Cia cia) {
-        for (Cia c : cias) {
-            if (c.getNome() == cia.getNome()) return cia;
-        }
+    public Cia buscarNome(String nome) {
+        for (Cia c : cias) if (c.getNome().equalsIgnoreCase(nome)) return c;
         return null;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("\n            Gerenciador de Companhias");
+        StringBuilder sb = new StringBuilder("\n\n            Gerenciador de Companhias");
         for (Cia c : cias) {
             sb.append("\n");
             sb.append(c.toString());

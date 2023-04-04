@@ -1,5 +1,6 @@
 package entities;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.chrono.ChronoLocalDate;
@@ -11,14 +12,21 @@ import java.util.Date;
 public class Voo {
     private LocalDate data;
     private LocalTime hora;
-    private LocalTime duracao;
+    private Duration duracao;
     private Rota rota;
-    private String status;
+    private Status status;
 
-    public Voo(int ano, int mes, int dia, int hora, int min, int h, int m, Rota rt, String sts) {
+    public Voo(int ano, int mes, int dia, int hora, int min, int m, Rota rt, Status sts) {
         data = LocalDate.of(ano, mes, dia);
         this.hora = LocalTime.of(hora, min);
-        duracao = LocalTime.of(h, m);
+        duracao = Duration.ofMinutes(m);
+        rota = rt;
+        status = sts;
+    }
+    public Voo(int m, Rota rt, Status sts){
+        data = LocalDate.of(2016, 8, 12);
+        this.hora = LocalTime.of(12,00);
+        duracao = Duration.ofMinutes(m);
         rota = rt;
         status = sts;
     }
@@ -31,7 +39,7 @@ public class Voo {
         return hora;
     }
 
-    public LocalTime getDuracao() {
+    public Duration getDuracao() {
         return duracao;
     }
 
@@ -39,7 +47,7 @@ public class Voo {
         return rota;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -52,7 +60,7 @@ public class Voo {
         this.hora = hora;
     }
 
-    public void setDuracao(LocalTime duracao) {
+    public void setDuracao(Duration duracao) {
         this.duracao = duracao;
     }
 
@@ -60,12 +68,12 @@ public class Voo {
         this.rota = rota;
     }
 
-    public void setStatus(String sts) {
+    public void setStatus(Status sts) {
         status = sts;
     }
 
     @Override
     public String toString() {
-        return String.format("%tF | %s | %s | %s | %s", data, hora, duracao, rota.getRota(), status);
+        return String.format("%tF | %s | %s | %s | %s", data, hora, duracao.toMinutes(), rota.getRota(), status);
     }
 }

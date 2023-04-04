@@ -10,6 +10,7 @@ public class App {
         Cia g3 = new Cia("G3", "Gol Linhas Aéreas SA");
         Cia tp = new Cia("TP", "TAP Portugal");
         Cia ad = new Cia("AD", "Azul Linhas Aéreas");
+
         System.out.println(jj.toString());
         System.out.println(g3.toString());
         System.out.println(tp.toString());
@@ -51,20 +52,27 @@ public class App {
         System.out.println();
 
         System.out.println("-------------------- VOOS --------------------");
-        Voo v1 = new Voo(2016, 8, 10, 8, 00, 1, 30, r1, "Atrasado");
-        Voo v2 = new Voo(2016, 8, 10, 15, 00, 2, 00, r2, "Confirmado");
-        Voo v3 = new Voo(2016, 8, 16, 12, 00, 2, 00, r3, "Cancelado");
+        Voo v1 = new Voo(2016, 8, 10, 8, 00, 130, r1, Status.Atrasado);
+        Voo v2 = new Voo(2016, 8, 10, 15, 00, 200, r2, Status.Confirmado);
+        Voo v3 = new Voo(100, r3, Status.Cancelado);
         System.out.println(v1.toString());
         System.out.println(v2.toString());
         System.out.println(v3.toString());
         System.out.println();
 
+
+        System.out.println("\n\n---------------------------------------------------------");
+
+
+        System.out.println("-------------------- GERENCIADORES ----------------------");
         GerenciadorCias gCias = GerenciadorCias.getInstance();
         gCias.inserir(jj);
         gCias.inserir(g3);
         gCias.inserir(tp);
         gCias.inserir(ad);
         System.out.println(gCias.toString());
+        System.out.printf("     Buscar por nome: %s%n", gCias.buscarNome("Gol Linhas Aéreas SA"));
+        System.out.printf("     Buscar por codigo: %s%n", gCias.buscarCod("jj"));
 
 
         GerenciadorAeronaves gAeronaves = GerenciadorAeronaves.getInstance();
@@ -73,6 +81,7 @@ public class App {
         gAeronaves.inserir(a733);
         gAeronaves.inserir(a764);
         System.out.println(gAeronaves.toString());
+        System.out.printf("     Buscar por codigo %s%n", gAeronaves.buscar("733"));
 
 
         GerenciadorAeroportos gAeroporto = GerenciadorAeroportos.getInstance();
@@ -81,6 +90,7 @@ public class App {
         gAeroporto.inserir(mia);
         gAeroporto.inserir(lis);
         System.out.println(gAeroporto.toString());
+        System.out.printf("     Buscar por codigo: %s%n", gAeroporto.buscar("POA"));
 
 
         GerenciadorRotas gRotas = GerenciadorRotas.getInstance();
@@ -90,19 +100,21 @@ public class App {
         gRotas.inserir(r4);
         gRotas.inserir(r5);
         System.out.println(gRotas.toString());
-        System.out.println("\nbuscar: por origem Aeroporto Salgado Filho\nQual a rota");
-        System.out.println(gRotas.buscarOrigem("São Paulo Guarulhos Intl Apt"));
-        System.out.println("\nbuscar: por destino MIA Miami International Apt\nQual a rota");
-        System.out.println(gRotas.buscarDestino("MIA Miami International Apt"));
+        System.out.printf("      Buscar: por origem Aeroporto Salgado Filho      \nRotas: %s%n", gRotas.buscarOrigem("São Paulo Guarulhos Intl Apt"));
+        System.out.printf("      Buscar: por destino MIA Miami International Apt     \nRotas %s%n", gRotas.buscarDestino("MIA Miami International Apt"));
 
 
         GerenciadorVoos gVoos = GerenciadorVoos.getInstance();
         gVoos.inserir(v1);
         gVoos.inserir(v2);
         gVoos.inserir(v3);
-        System.out.println("Buscar por data yyyy-mm-dd");
-        System.out.println(gVoos.buscar(2016,8,10));
+        System.out.println(gVoos.toString());
+        System.out.printf("\n      Buscar por data yyyy-mm-dd %s%n", gVoos.buscar(2016, 8, 10));
 
+        //Geo geo1 = new Geo(poa.getGeo().getLatitude(), poa.getGeo().getLongitude());
+        System.out.println("Distancia entre Poa - Slagado Filho e SP - Guarulhos");
+        System.out.println(Geo.distancia(poa.getGeo(), gru.getGeo()));
+        System.out.println(Geo.distancia(v2));
 
     }
 }

@@ -37,7 +37,7 @@ public class GerenciadorVoos {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("");
+        StringBuilder sb = new StringBuilder("\n\n            Gerenciador de Voos");
         for (Voo v : voos) {
             sb.append("\n");
             sb.append(v.toString());

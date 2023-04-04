@@ -40,6 +40,6 @@ public class Aeronave {
 
     @Override
     public String toString() {
-        return String.format("%3s %-15s %3d", codigo, descricao, assentos);
+        return String.format("[%3s] %-15s %3d", codigo, descricao, assentos);
     }
 }

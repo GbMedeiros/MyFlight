@@ -17,8 +17,8 @@ public class GerenciadorAeronaves {
         return instance;
     }
 
-    public Aeronave buscar(Aeronave aeronave) {
-        for (Aeronave a : aeronaves) if (a.getCodigo() == aeronave.getCodigo()) return aeronave;
+    public Aeronave buscar(String codigo) {
+        for (Aeronave a : aeronaves) if (a.getCodigo().equals(codigo)) return a;
         return null;
     }
 
@@ -28,7 +28,7 @@ public class GerenciadorAeronaves {
 
     @Override
     public String toString() {
-        StringBuilder rt = new StringBuilder("\n            Gerenciador Aeronaves");
+        StringBuilder rt = new StringBuilder("\n\n            Gerenciador Aeronaves");
         for (Aeronave a : aeronaves) {
             rt.append("\n");
             rt.append(a.toString());

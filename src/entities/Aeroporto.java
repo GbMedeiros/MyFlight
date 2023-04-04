@@ -8,6 +8,7 @@ public class Aeroporto {
     private String nome;
     private Geo geo;
 
+
     public Aeroporto(String codigo, String nome, double latitude, double longitude) {
         geo = new Geo();
         this.codigo = codigo;
@@ -39,6 +40,12 @@ public class Aeroporto {
 
     public void setGeo(Geo geo) {
         this.geo = geo;
+    }
+
+
+
+    public static void distancia(Voo voo) {
+
     }
 
     @Override
