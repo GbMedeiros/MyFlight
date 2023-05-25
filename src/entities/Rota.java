@@ -3,17 +3,20 @@ package entities;
     Rota: é identificada por uma aeronave, aeroporto de origem, aeroporto de destino e companhia aérea
 */
 
-public class Rota {
+public class Rota implements Comparable<Rota> {
     private Cia cia;
     private Aeroporto origem;
     private Aeroporto destino;
     private Aeronave aeronave;
+    private static int qtd = 0;
 
-    public Rota(Cia cia, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
+    public Rota(Cia cia, Aeroporto origem, Aeroporto destino, Aeronave aviao) {
         this.cia = cia;
         this.origem = origem;
         this.destino = destino;
-        this.aeronave = aeronave;
+        aeronave = aviao;
+        qtd++;
+
     }
 
     public Cia getCia() {
@@ -48,12 +51,24 @@ public class Rota {
         this.aeronave = aeronave;
     }
 
+    public static int getQtd() {
+        return qtd;
+    }
+
     @Override
     public String toString(){
-        return String.format("| %s | %s | %s | %s",cia.getCodigo(),origem.getCodigo(), destino.getCodigo(), aeronave.getCodigo());
+        String aero = "";
+        if(aeronave == null)
+            aero = "sem aeronave";
+        else  aero = aeronave.getCodigo();
+        return String.format("%s | %s | %s | %s",cia.getCodigo(),origem.getCodigo(), destino.getCodigo(), aero);
     }
     public String getRota(){
         return String.format("%s: %s-%S",cia.getCodigo(),origem.getCodigo(),destino.getCodigo());
     }
 
+    @Override
+    public int compareTo(Rota o) {
+        return cia.getNome().compareTo(o.getCia().getNome());
+    }
 }

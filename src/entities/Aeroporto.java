@@ -3,18 +3,20 @@ package entities;
 /*
     Aeroporto: possui um código, um nome e uma localização geográfica (latitude e longitude);
  */
-public class Aeroporto {
+public class Aeroporto implements Comparable<Aeroporto> {
     private String codigo;
     private String nome;
     private Geo geo;
+    private static int qtd = 0;
 
-
-    public Aeroporto(String codigo, String nome, double latitude, double longitude) {
+    public Aeroporto(String codigo, String nome, float latitude, float longitude) {
         geo = new Geo();
         this.codigo = codigo;
         this.nome = nome;
         this.geo.setLatitude(latitude);
         this.geo.setLongitude(longitude);
+        qtd++;
+
 
     }
 
@@ -42,10 +44,17 @@ public class Aeroporto {
         this.geo = geo;
     }
 
-
+    public static int getQtd() {
+        return qtd;
+    }
 
     public static void distancia(Voo voo) {
 
+    }
+
+    @Override
+    public int compareTo(Aeroporto o) {
+        return nome.compareTo(o.getNome());
     }
 
     @Override

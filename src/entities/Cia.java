@@ -6,12 +6,13 @@ package entities;
 public class Cia {
     private String codigo;
     private String nome;
-    private static int totalCias = 0;
+    private static int qtd = 0;
 
     public Cia(String codigo, String nome) {
-        totalCias++;
+        qtd++;
         this.codigo = codigo;
         this.nome = nome;
+
     }
 
     public String getCodigo() {
@@ -30,9 +31,10 @@ public class Cia {
         this.nome = nome;
     }
 
-    public static int getTotalCias(){
-        return totalCias;
+    public static int getQtd(){
+        return qtd;
     }
+
     @Override
     public String toString() {
         return String.format("|%2s| %s", codigo, nome);

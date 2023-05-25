@@ -1,11 +1,16 @@
 package entities;
 
+import java.io.BufferedReader;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class GerenciadorVoos {
-    private Voo voo;
-    private ArrayList<Voo> voos;
+    private VooVariasEscalas voo;
+    private ArrayList<VooVariasEscalas> voos;
     private static GerenciadorVoos instance;
 
     private GerenciadorVoos() {
@@ -17,7 +22,7 @@ public class GerenciadorVoos {
         return instance;
     }
 
-    public void inserir(Voo voo) {
+    public void inserir(VooVariasEscalas voo) {
         voos.add(voo);
     }
 
@@ -34,6 +39,9 @@ public class GerenciadorVoos {
         }
         return String.format("%s", sb);
     }
+
+
+
 
     @Override
     public String toString() {
