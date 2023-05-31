@@ -63,7 +63,7 @@ public class GerenciadorVoos {
                 Aeronave aviao = equipments.buscar(codAero);
 
                 Rota r = new Rota(cia, from, to, aviao);
-                VooVariasEscalas v = new VooVariasEscalas(r, Status.Confirmado );
+                VooVariasEscalas v = new VooVariasEscalas(r, Status.Confirmado);
                 inserir(v);
 
             }
@@ -72,8 +72,6 @@ public class GerenciadorVoos {
         }
         return true;
     }
-
-
 
 
     @Override

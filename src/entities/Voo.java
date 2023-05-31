@@ -80,6 +80,6 @@ public abstract class Voo {
 
     @Override
     public String toString() {
-        return String.format("%tF | %s | %s | %s", data, hora, rota.getRota(), status);
+        return String.format("%tF | %s | Rota: %s | %s", data, hora, rota.getRota(), status);
     }
 }
