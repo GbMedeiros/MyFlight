@@ -8,6 +8,7 @@ public class Rota implements Comparable<Rota> {
     private Aeroporto origem;
     private Aeroporto destino;
     private Aeronave aeronave;
+
     private static int qtd = 0;
 
     public Rota(Cia cia, Aeroporto origem, Aeroporto destino, Aeronave aviao) {
@@ -56,19 +57,21 @@ public class Rota implements Comparable<Rota> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String aero = "";
-        if(aeronave == null)
-            aero = "sem aeronave";
-        else  aero = aeronave.getCodigo();
-        return String.format("%s | %s | %s | %s",cia.getCodigo(),origem.getCodigo(), destino.getCodigo(), aero);
-    }
-    public String getRota(){
-        return String.format("%s: %s-%S",cia.getCodigo(),origem.getCodigo(),destino.getCodigo());
+        if (aeronave == null) aero = "sem aeronave";
+        else aero = aeronave.getCodigo();
+
+        return String.format("%s | %s | %s | %s", cia.getCodigo(), origem.getCodigo(), destino.getCodigo(), aero);
     }
 
     @Override
     public int compareTo(Rota o) {
         return cia.getNome().compareTo(o.getCia().getNome());
     }
+
+    public String getRota() {
+        return String.format("%s: %s-%S", cia.getCodigo(), origem.getCodigo(), destino.getCodigo());
+    }
+
 }

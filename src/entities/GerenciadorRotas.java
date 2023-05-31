@@ -71,12 +71,7 @@ public class GerenciadorRotas {
                 Cia cia = airlines.buscarCod(dados[0]);
                 Aeroporto from = airports.buscar(dados[1]);
                 Aeroporto to = airports.buscar(dados[2]);
-
                 String codAero = dados[5].trim().substring(0, 3);
-                String[] avioes = dados[5].split(" ");
-                for (String a : avioes) {
-
-                }
                 Aeronave aviao = equipments.buscar(codAero);
 
                 Rota r = new Rota(cia, from, to, aviao);

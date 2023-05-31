@@ -27,6 +27,7 @@ public class TesteLeitura {
         GerenciadorRotas routes = GerenciadorRotas.getInstance();
         routes.leituraDados("routes.dat");
         System.out.println(routes.toString());
+
         Contavel.exibirContagemObjetos(Aeroporto.getQtd(), Aeronave.getQtd(), Cia.getQtd(), Geo.getQtd(), Rota.getQtd(), Voo.getQtd());
 
     }

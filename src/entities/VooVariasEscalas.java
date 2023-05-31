@@ -4,31 +4,29 @@ import java.util.ArrayList;
 
 public class VooVariasEscalas extends Voo {
 
-    private int escalas = 0;
-
-    private ArrayList rotas;
+    private ArrayList<Rota> escala;
     public VooVariasEscalas(int ano, int mes, int dia, int hora, int min, int m, Rota rt, Status sts, int e) {
         super(ano, mes, dia, hora, min, m, rt, sts);
-        escalas = e;
-        rotas = new ArrayList<>();
-        rotas.add(rt);
-        escalas++;
+        escala = new ArrayList<Rota>();
+        escala.add(rt);
     }
 
     public VooVariasEscalas(int m, Rota rt, Status sts, int e) {
         super(m, rt, sts);
-        rotas = new ArrayList<>();
-        rotas.add(rt);
-        escalas++;
+        escala = new ArrayList<Rota>();
+        escala.add(rt);
     }
 
     public void addRota(Rota nova){
-        rotas.add(nova);
+        escala.add(nova);
+    }
 
+    public ArrayList getRotas() {
+        return escala;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " paradas: " +escalas;
+        return super.toString() + " paradas: " +escala;
     }
 }
