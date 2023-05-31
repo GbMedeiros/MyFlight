@@ -11,8 +11,8 @@ public class VooVariasEscalas extends Voo {
         escala.add(rt);
     }
 
-    public VooVariasEscalas(int m, Rota rt, Status sts, int e) {
-        super(m, rt, sts);
+    public VooVariasEscalas(Rota rt, Status sts) {
+        super(rt, sts);
         escala = new ArrayList<Rota>();
         escala.add(rt);
     }

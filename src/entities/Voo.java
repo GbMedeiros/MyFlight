@@ -25,10 +25,9 @@ public abstract class Voo {
         status = sts;
         qtd++;
     }
-    public Voo(int m, Rota rt, Status sts){
+    public Voo(Rota rt, Status sts){
         data = LocalDate.of(2016, 8, 12);
         this.hora = LocalTime.of(12,00);
-        duracao = Duration.ofMinutes(m);
         rota = rt;
         status = sts;
         qtd++;
@@ -81,6 +80,6 @@ public abstract class Voo {
 
     @Override
     public String toString() {
-        return String.format("%tF | %s | %s | %s | %s", data, hora, duracao.toMinutes(), rota.getRota(), status);
+        return String.format("%tF | %s | %s | %s", data, hora, rota.getRota(), status);
     }
 }

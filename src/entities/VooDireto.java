@@ -9,8 +9,8 @@ public class VooDireto extends Voo {
         super(ano, mes, dia, hora, min, m, rt, sts);
     }
 
-    public VooDireto(int m, Rota rt, Status sts) {
-        super(m, rt, sts);
+    public VooDireto(Rota rt, Status sts) {
+        super(rt, sts);
     }
 
     public Rota getRota() {
